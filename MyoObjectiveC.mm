@@ -68,7 +68,7 @@ public:
     void onPose(myo::Myo* myo, uint64_t timestamp, myo::Pose pose)
     {
         currentPose = pose;
-        print();
+//        print();
         MyoPose *myopose = [MyoPose new];
         if (pose.type() == myo::Pose::fist)
             myopose.poseType = MyoPoseTypeFist;
@@ -263,5 +263,21 @@ public:
 }
 -(void)stopUpdate {
     update = false;
+}
+
+-(void)vibrateWithType:(MyoVibrationType)type {
+    
+    switch (type) {
+        case MyoVibrationTypeShort:
+            myo->vibrate(myo::Myo::vibrationShort);
+            break;
+        case MyoVibrationTypeLong:
+            myo->vibrate(myo::Myo::vibrationLong);
+            break;
+        default:
+            myo->vibrate(myo::Myo::vibrationMedium);
+            break;
+    }
+    
 }
 @end

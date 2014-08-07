@@ -98,6 +98,8 @@
             [self pressKey:kVK_Control down:false];
             [NSThread sleepForTimeInterval: 0.1]; // 100 mS delay
             [self pressKey:kVK_LeftArrow down:false];
+            
+            [myo vibrateWithType:MyoVibrationTypeShort];
         }
         else if (pose.poseType == MyoPoseTypeWaveOut) {
             [self pressKey:kVK_Control down:true];
@@ -109,12 +111,14 @@
             [self pressKey:kVK_Control down:false];
             [NSThread sleepForTimeInterval: 0.1]; // 100 mS delay
             [self pressKey:kVK_RightArrow down:false];
+            [myo vibrateWithType:MyoVibrationTypeShort];
         }
         else if (pose.poseType == MyoPoseTypeFist) {
     //        [self togglePlayPauseMyo];
         }
         else if (pose.poseType == MyoPoseTypeFingersSpread) {
             [[NSWorkspace sharedWorkspace] launchApplication:@"Mission Control"];
+            [myo vibrateWithType:MyoVibrationTypeShort];
         }
     }
 }

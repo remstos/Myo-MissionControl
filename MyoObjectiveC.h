@@ -59,6 +59,12 @@ typedef enum MyoPoseType {
 @end
 
 
+#pragma mark - MyoVibrationType
+typedef enum MyoVibrationType {
+    MyoVibrationTypeShort = 0,
+    MyoVibrationTypeMedium = 1,
+    MyoVibrationTypeLong = 2
+} MyoVibrationType;
 
 #pragma mark - MYO
 @interface Myo : NSObject
@@ -66,6 +72,8 @@ typedef enum MyoPoseType {
 -(BOOL)connectMyoWaiting:(int)milliseconds;
 -(void)startUpdate;
 -(void)stopUpdate;
+-(void)vibrateWithType:(MyoVibrationType)type;
+
 @property (nonatomic) int updateTime;
 @property (nonatomic, assign) id<MyoDelegate> delegate;
 @end
