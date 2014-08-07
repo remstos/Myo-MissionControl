@@ -11,5 +11,4 @@ Use you Myo between spaces of your Mac.
 
 ==========
 #### MyoObjectiveC
-`MyoObjectiveC.h` and `MyoObjectiveC.mm` come from -> [Kemcake/Myo-ObjectiveC-OSX](https://github.com/Kemcake/Myo-ObjectiveC-OSX)
-
+`MyoObjectiveC.h`/`MyoObjectiveC.mm` come from -> [Kemcake/Myo-ObjectiveC-OSX](https://github.com/Kemcake/Myo-ObjectiveC-OSX)
