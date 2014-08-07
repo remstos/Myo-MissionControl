@@ -11,9 +11,7 @@
 @interface AppDelegate : NSObject <NSApplicationDelegate,MyoDelegate>{
     NSWindow *window;
     NSStatusItem * statusItem;
-    BOOL isPaused;
-    
-    BOOL unlocked;
+    BOOL isPaused;    
 }
 @property (weak) IBOutlet NSMenuItem *pauseButton;
 @property (weak) IBOutlet NSMenu *statusMenu;

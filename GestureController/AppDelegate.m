@@ -77,7 +77,7 @@
     if (isPaused) {
 //        [self.myo startUpdate];
         NSBundle *bundle = [NSBundle mainBundle];
-        NSImage *img = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"status_icon_paused" ofType:@"png"]];
+        NSImage *img = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"status_icon" ofType:@"png"]];
         [img setSize:NSMakeSize(20, 20)];
         [statusItem setImage:img];
         [self.pauseButton setTitle:@"Pause"];
@@ -85,7 +85,7 @@
     else {
 //        [self.myo stopUpdate];
         NSBundle *bundle = [NSBundle mainBundle];
-        NSImage *img = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"status_icon" ofType:@"png"]];
+        NSImage *img = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"status_icon_paused" ofType:@"png"]];
         [img setSize:NSMakeSize(20, 20)];
         [statusItem setImage:img];
         [self.pauseButton setTitle:@"Play"];
