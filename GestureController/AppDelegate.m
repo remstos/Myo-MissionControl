@@ -76,10 +76,18 @@
 -(void)togglePlayPauseMyo {
     if (isPaused) {
 //        [self.myo startUpdate];
+        NSBundle *bundle = [NSBundle mainBundle];
+        NSImage *img = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"status_icon_paused" ofType:@"png"]];
+        [img setSize:NSMakeSize(20, 20)];
+        [statusItem setImage:img];
         [self.pauseButton setTitle:@"Pause"];
     }
     else {
 //        [self.myo stopUpdate];
+        NSBundle *bundle = [NSBundle mainBundle];
+        NSImage *img = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"status_icon" ofType:@"png"]];
+        [img setSize:NSMakeSize(20, 20)];
+        [statusItem setImage:img];
         [self.pauseButton setTitle:@"Play"];
     }
     isPaused = !isPaused;
@@ -87,6 +95,11 @@
 #pragma mark - MYO
 -(void)myo:(Myo *)myo onPose:(MyoPose *)pose
 {
+    if (pose.poseType == MyoPoseTypeThumbToPinky) {
+        [self togglePlayPauseMyo];
+        NSLog(@"Thumb to pinky");
+        return;
+    }
     if (!isPaused) {
         if (pose.poseType == MyoPoseTypeWaveIn) {
             [self pressKey:kVK_Control down:true];
@@ -99,7 +112,7 @@
             [NSThread sleepForTimeInterval: 0.1]; // 100 mS delay
             [self pressKey:kVK_LeftArrow down:false];
             
-            [myo vibrateWithType:MyoVibrationTypeShort];
+//            [myo vibrateWithType:MyoVibrationTypeShort];
         }
         else if (pose.poseType == MyoPoseTypeWaveOut) {
             [self pressKey:kVK_Control down:true];
@@ -111,14 +124,11 @@
             [self pressKey:kVK_Control down:false];
             [NSThread sleepForTimeInterval: 0.1]; // 100 mS delay
             [self pressKey:kVK_RightArrow down:false];
-            [myo vibrateWithType:MyoVibrationTypeShort];
-        }
-        else if (pose.poseType == MyoPoseTypeFist) {
-    //        [self togglePlayPauseMyo];
+//            [myo vibrateWithType:MyoVibrationTypeShort];
         }
         else if (pose.poseType == MyoPoseTypeFingersSpread) {
             [[NSWorkspace sharedWorkspace] launchApplication:@"Mission Control"];
-            [myo vibrateWithType:MyoVibrationTypeShort];
+//            [myo vibrateWithType:MyoVibrationTypeShort];
         }
     }
 }

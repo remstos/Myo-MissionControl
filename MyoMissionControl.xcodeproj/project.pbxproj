@@ -16,6 +16,7 @@
 		13F4E47516B9B99D008A816C /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13F4E47416B9B99D008A816C /* EventKit.framework */; };
 		A5690F8B198F909B00741118 /* myo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5690F8A198F909B00741118 /* myo.framework */; };
 		A5690F8C198F90A800741118 /* myo.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A5690F8A198F909B00741118 /* myo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		A57EFC191993D282009A18D6 /* status_icon_paused.png in Resources */ = {isa = PBXBuildFile; fileRef = A57EFC181993D282009A18D6 /* status_icon_paused.png */; };
 		A5CB59581993BE6900FFDA08 /* status_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A5CB59571993BE6900FFDA08 /* status_icon.png */; };
 		A5CB595E1993C14A00FFDA08 /* MyoObjectiveC.mm in Sources */ = {isa = PBXBuildFile; fileRef = A5CB595D1993C14A00FFDA08 /* MyoObjectiveC.mm */; };
 /* End PBXBuildFile section */
@@ -50,6 +51,7 @@
 		1394A22116B72AD000192439 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		13F4E47416B9B99D008A816C /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		A5690F8A198F909B00741118 /* myo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = myo.framework; sourceTree = "<group>"; };
+		A57EFC181993D282009A18D6 /* status_icon_paused.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = status_icon_paused.png; path = GestureController/status_icon_paused.png; sourceTree = "<group>"; };
 		A5CB59571993BE6900FFDA08 /* status_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = status_icon.png; path = GestureController/status_icon.png; sourceTree = "<group>"; };
 		A5CB595C1993C14A00FFDA08 /* MyoObjectiveC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyoObjectiveC.h; sourceTree = "<group>"; };
 		A5CB595D1993C14A00FFDA08 /* MyoObjectiveC.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MyoObjectiveC.mm; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				A5CB595D1993C14A00FFDA08 /* MyoObjectiveC.mm */,
 				1394A21816B72AD000192439 /* MainMenu.xib */,
 				A5CB59571993BE6900FFDA08 /* status_icon.png */,
+				A57EFC181993D282009A18D6 /* status_icon_paused.png */,
 				1394A20A16B72AD000192439 /* Supporting Files */,
 				1394A20216B72AD000192439 /* Frameworks */,
 				1394A20016B72AD000192439 /* Products */,
@@ -180,6 +183,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A57EFC191993D282009A18D6 /* status_icon_paused.png in Resources */,
 				1394A20E16B72AD000192439 /* InfoPlist.strings in Resources */,
 				1394A21416B72AD000192439 /* Credits.rtf in Resources */,
 				1394A21A16B72AD000192439 /* MainMenu.xib in Resources */,

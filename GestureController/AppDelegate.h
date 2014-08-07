@@ -12,6 +12,8 @@
     NSWindow *window;
     NSStatusItem * statusItem;
     BOOL isPaused;
+    
+    BOOL unlocked;
 }
 @property (weak) IBOutlet NSMenuItem *pauseButton;
 @property (weak) IBOutlet NSMenu *statusMenu;
