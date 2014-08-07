@@ -17,6 +17,7 @@
 		A5690F8B198F909B00741118 /* myo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5690F8A198F909B00741118 /* myo.framework */; };
 		A5690F8C198F90A800741118 /* myo.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A5690F8A198F909B00741118 /* myo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		A5CB59581993BE6900FFDA08 /* status_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A5CB59571993BE6900FFDA08 /* status_icon.png */; };
+		A5CB595B1993BFE300FFDA08 /* MyoObjectiveC.mm in Sources */ = {isa = PBXBuildFile; fileRef = A5CB595A1993BFE300FFDA08 /* MyoObjectiveC.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -50,6 +51,8 @@
 		13F4E47416B9B99D008A816C /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		A5690F8A198F909B00741118 /* myo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = myo.framework; sourceTree = "<group>"; };
 		A5CB59571993BE6900FFDA08 /* status_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = status_icon.png; path = GestureController/status_icon.png; sourceTree = "<group>"; };
+		A5CB59591993BFE300FFDA08 /* MyoObjectiveC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyoObjectiveC.h; path = MyoObjectiveC/MyoObjectiveC.h; sourceTree = "<group>"; };
+		A5CB595A1993BFE300FFDA08 /* MyoObjectiveC.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = MyoObjectiveC.mm; path = MyoObjectiveC/MyoObjectiveC.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +74,8 @@
 			children = (
 				1394A21516B72AD000192439 /* AppDelegate.h */,
 				1394A21616B72AD000192439 /* AppDelegate.m */,
+				A5CB59591993BFE300FFDA08 /* MyoObjectiveC.h */,
+				A5CB595A1993BFE300FFDA08 /* MyoObjectiveC.mm */,
 				1394A21816B72AD000192439 /* MainMenu.xib */,
 				A5CB59571993BE6900FFDA08 /* status_icon.png */,
 				1394A20A16B72AD000192439 /* Supporting Files */,
@@ -207,6 +212,7 @@
 			files = (
 				1394A21016B72AD000192439 /* main.m in Sources */,
 				1394A21716B72AD000192439 /* AppDelegate.m in Sources */,
+				A5CB595B1993BFE300FFDA08 /* MyoObjectiveC.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

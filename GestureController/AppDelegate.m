@@ -38,6 +38,7 @@
     [statusItem setImage:img];
     [statusItem setHighlightMode:YES];
     [window close];
+    
 }
 
 -(void) scrollX:(NSInteger)x scrollY:(NSInteger)y{

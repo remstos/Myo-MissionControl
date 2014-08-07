@@ -1,0 +1,3 @@
+[submodule "MyoObjectiveC"]
+	path = MyoObjectiveC
+	url = https://github.com/Kemcake/MYO-ObjectiveC-OSX.git
