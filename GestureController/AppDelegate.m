@@ -118,15 +118,5 @@
         }
     }
 }
--(void)myo:(Myo *)myo onOrientationDataWithRoll:(int)roll pitch:(int)pitch yaw:(int)yaw
-{
-//    NSLog(@"roll - %i | pitch - %i | yaw - %i",roll,pitch,yaw);
-//    NSLog(@"_____________________");
-}
-
--(void)myo:(Myo *)myo onGyroscopeDataWithVector:(float)vector
-{
-    NSLog(@"gyro : %f", vector);
-}
 @end
 
