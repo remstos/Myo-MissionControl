@@ -8,6 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 #import "MyoObjectiveC.h"
+
 @interface AppDelegate : NSObject <NSApplicationDelegate,MyoDelegate>{
     NSWindow *window;
     NSStatusItem * statusItem;

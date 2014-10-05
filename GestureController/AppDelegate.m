@@ -9,6 +9,10 @@
 #import "AppDelegate.h"
 #import <Carbon/Carbon.h>
 
+@interface AppDelegate()
+@property (nonatomic) MyoArm *currentArm;
+@end
+
 @implementation AppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
@@ -92,7 +96,22 @@
     }
     isPaused = !isPaused;
 }
+
+-(MyoPose*)pose:(MyoPose*)pose forCurrentArm:(MyoArm*)arm;
+{
+    // invert wave pose on right arm
+    if (arm.armType == MyoArmTypeRight && (pose.poseType == MyoPoseTypeWaveIn || pose.poseType == MyoPoseTypeWaveOut)) {
+        pose.poseType = (pose.poseType == MyoPoseTypeWaveIn) ? MyoPoseTypeWaveOut : MyoPoseTypeWaveIn;
+    }
+    return pose;
+}
+
 #pragma mark - MYO
+-(void)myoOnArmRecognized:(Myo *)myo arm:(MyoArm *)arm;
+{
+    self.currentArm = arm;
+}
+
 -(void)myo:(Myo *)myo onPose:(MyoPose *)pose
 {
     if (pose.poseType == MyoPoseTypeThumbToPinky) {
@@ -101,6 +120,8 @@
         return;
     }
     if (!isPaused) {
+       pose = [self pose:pose forCurrentArm:self.currentArm];
+
         if (pose.poseType == MyoPoseTypeWaveIn) {
             [self pressKey:kVK_Control down:true];
             [NSThread sleepForTimeInterval: 0.1]; // 100 mS delay
