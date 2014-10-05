@@ -88,7 +88,22 @@ public:
     {
         onArm = true;
         whichArm = arm;
-        if ([_myo.delegate respondsToSelector:@selector(myoOnArmRecognized:)]) {
+        MyoArm *thisArm = [MyoArm new];
+        switch (arm) {
+            case myo::armLeft:
+                thisArm.armType = MyoArmTypeLeft;
+                break;
+            case myo::armRight:
+                thisArm.armType = MyoArmTypeRight;
+                break;
+            default:
+                thisArm.armType = MyoArmTypeUnknown;
+                break;
+        }
+        if ([_myo.delegate respondsToSelector:@selector(myoOnArmRecognized:arm:)]) {
+            [_myo.delegate myoOnArmRecognized:_myo arm:thisArm];
+        }
+        else if ([_myo.delegate respondsToSelector:@selector(myoOnArmRecognized:)]) {
             [_myo.delegate myoOnArmRecognized:_myo];
         }
     }
@@ -158,6 +173,10 @@ public:
 #pragma mark - MYOPOSE
 @implementation MyoPose
 
+@end
+
+@implementation MyoArm
+// nop
 @end
 
 #pragma mark - MYOVECTOR
